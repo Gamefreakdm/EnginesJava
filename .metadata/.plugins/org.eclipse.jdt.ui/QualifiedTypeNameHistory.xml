@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.lwjgl.opengl.DisplayMode"/>
+<fullyQualifiedTypeName name="Objects.Handler"/>
+<fullyQualifiedTypeName name="Objects.ObjectsHandler"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="Objects.Object"/>
+<fullyQualifiedTypeName name="Graphics.ImageLoader"/>
+<fullyQualifiedTypeName name="java.awt.event.KeyEvent"/>
+<fullyQualifiedTypeName name="java.util.LinkedList"/>
+<fullyQualifiedTypeName name="java.awt.event.MouseAdapter"/>
+<fullyQualifiedTypeName name="java.awt.event.MouseEvent"/>
+<fullyQualifiedTypeName name="java.awt.SplashScreen"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="java.nio.file.Files"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="javax.imageio.ImageIO"/>
+<fullyQualifiedTypeName name="java.util.logging.Level"/>
+<fullyQualifiedTypeName name="Level.Tile.GrassTile"/>
+<fullyQualifiedTypeName name="Graphics.Sprite"/>
+<fullyQualifiedTypeName name="Level.Tile.WaterTile"/>
+<fullyQualifiedTypeName name="Level.LevelMain"/>
+<fullyQualifiedTypeName name="java.awt.Color"/>
+<fullyQualifiedTypeName name="Level.Level"/>
+<fullyQualifiedTypeName name="Entity.Entity"/>
+<fullyQualifiedTypeName name="org.lwjgl.opengl.Display"/>
+</qualifiedTypeNameHistroy>

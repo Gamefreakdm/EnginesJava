@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;Using Scanner&apos;" deleteContents="false" description="Delete resource &apos;Using Scanner&apos;" element1="/Using Scanner" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1436248099512"/>&#x0A;<refactoring comment="Delete resource &apos;3D Game Engine/src/Main.java&apos;" deleteContents="false" description="Delete resource &apos;3D Game Engine/src/Main.java&apos;" element1="/3D Game Engine/src/Main.java" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1436575819050"/>
+</session>

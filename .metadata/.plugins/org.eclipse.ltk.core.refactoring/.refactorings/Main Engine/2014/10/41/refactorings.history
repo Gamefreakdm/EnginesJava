@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Main Engine/src/Objects/Handler.java&apos; to &apos;ObjectsHandler.java&apos;" description="Rename resource &apos;Handler.java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/Objects/Handler.java" name="ObjectsHandler.java" stamp="1412860553894" updateReferences="true"/>
+</session>

@@ -1,0 +1,50 @@
+package Graphics;
+
+import java.awt.image.BufferedImage;
+import Objects.ObjectsHandler;
+
+public class Screen {
+	public short[] Pixels;
+	@SuppressWarnings("unused")
+	private SpriteSheet SS;
+	private short Width, Height;
+	private ObjectsHandler OBH;
+	private int[] Tiles = new int[64 * 64];
+	private BufferedImage Sprite_Sheet;
+
+	public Screen(short width, short height) {
+		this.Width = width;
+		this.Height = height;
+		Pixels = new short[Width * Height];
+		OBH = new ObjectsHandler();
+		ImageLoader ImageLoader = new ImageLoader();
+		Sprite_Sheet = ImageLoader.BufferedImageLoader("Resources/Textures/SpriteSheet.png");
+		SS = new SpriteSheet(getSpriteSheet());
+	}
+
+	public void Update() {
+		OBH.Update();
+	}
+
+	public void Render() {
+		for (short y = 0; y < Height; y++) {
+			if (y >= Height || y < 0)
+				break;
+			for (short x = 0; x < Width; x++) {
+				if (x >= Width || x < 0)
+					break;
+				Pixels[x + y * Width] = (short) 0xff15ff15;
+			}
+		}
+	}
+
+	public void Clear() {
+		for (int i = 0; i < Pixels.length; i++) {
+			Pixels[i] = 0;
+		}
+	}
+
+	private BufferedImage getSpriteSheet() {
+		return Sprite_Sheet;
+	}
+}

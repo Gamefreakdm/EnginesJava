@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Youtube Learn/src/Level/LevelMain.java&apos; to &apos;Level.java&apos;" description="Rename resource &apos;LevelMain.java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/Level/LevelMain.java" name="Level.java" stamp="1430944263420" updateReferences="true"/>
+</session>

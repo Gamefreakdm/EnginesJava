@@ -1,0 +1,31 @@
+package Graphics;
+
+public class Screen {
+	public int[] Pixels;
+	private final int Width, Height;
+
+	public Screen(int w, int h) {
+		Width = w;
+		Height = h;
+		Pixels = new int[Width * Height];
+	}
+
+	private void clearPixels() {
+		for (int i = 0; i < Pixels.length; i++) {
+			Pixels[i] = 0;
+		}
+	}
+
+	public void Render() {
+		clearPixels();
+		for (int y = 0; y < Height; y++) {
+			if (y < 0 || y > Height)
+				break;
+			for (int x = 0; x < Width; x++) {
+				if (x < 0 || x > Width)
+					break;
+				Pixels[x + y * Width] = 0x19941B;
+			}
+		}
+	}
+}
