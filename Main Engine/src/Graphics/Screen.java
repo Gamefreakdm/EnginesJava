@@ -3,20 +3,20 @@ package Graphics;
 import Main.Main;
 
 public class Screen {
-	private static void clearPixels(int[] p) {
+	public static void clearPixels(int[] p) {
 		for (int i = 0; i < p.length; i++)
 			p[i] = 0;
 	}
 
-	public static void Render(int[] p) {
+	public static void RenderBack(int[] p) {
 		clearPixels(p);
-		for (int y = 0; y < Main.HEIGHT; y++) {
-			if (y < 0 || y >= Main.WIDTH)
+		for (int y = 0; y < Main.Height; y++) {
+			if (y < 0 || y >= Main.Height)
 				break;
-			for (int x = 0; x < Main.WIDTH; x++) {
-				if (x < 0 || x >= Main.WIDTH)
+			for (int x = 0; x < Main.Width; x++) {
+				if (x < 0 || x >= Main.Width)
 					break;
-				p[x + y * Main.WIDTH] = 0x0ff00ff31;
+				p[x + y * Main.Width] = 0x0ff00ff31;
 			}
 		}
 	}

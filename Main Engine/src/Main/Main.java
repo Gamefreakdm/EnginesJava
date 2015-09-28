@@ -8,7 +8,7 @@ import java.awt.image.DataBufferInt;
 import javax.swing.JFrame;
 import Graphics.Screen;
 
-public class Main extends Canvas {
+public class Main extends Canvas implements Runnable {
 	private JFrame Frame;
 	private int[] Pixels;
 	private KeyHandler KH;
@@ -16,7 +16,7 @@ public class Main extends Canvas {
 	private BufferedImage bimg;
 	private String Title = "Title";
 	private static final long serialVersionUID = 1L;
-	public static final int WIDTH = 800, HEIGHT = 600;
+	public static final int Width = 800, Height = 600;
 
 	public static void main(String[] args) {
 		System.out.println("[System] Starting...");
@@ -25,7 +25,7 @@ public class Main extends Canvas {
 		M.Frame = new JFrame("Loading...");
 		M.Frame.add(M);
 		M.Frame.addKeyListener(M.KH);
-		M.Frame.setSize(WIDTH + 6, HEIGHT + 6);
+		M.Frame.setSize(Width, Height);
 		M.Frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		M.Frame.setResizable(false);
 		M.Frame.setLocationRelativeTo(null);
@@ -37,22 +37,24 @@ public class Main extends Canvas {
 	private void Start() {
 		if (Running)
 			return;
+		Thread thread = new Thread(this);
+		thread.start();
 		Running = true;
-		Run();
 	}
 
-	private void Run() {
+	public void run() {
 		long Timer = System.currentTimeMillis();
 		long lastTime = System.nanoTime();
-		double Delta = 0;
 		int Frames = 0;
 		int Updates = 0;
+		double Delta = 0;
+		long NowTime = 0;
 		final double NS = 1000000000.0 / 120;
 		System.out.println("[System] Started");
 		while (Running) {
-			long nowTime = System.nanoTime();
-			Delta += (nowTime - lastTime) / NS;
-			lastTime = nowTime;
+			NowTime = System.nanoTime();
+			Delta += (NowTime - lastTime) / NS;
+			lastTime = NowTime;
 			while (Delta >= 1) {
 				Update();
 				Updates++;
@@ -84,14 +86,14 @@ public class Main extends Canvas {
 	private void Render() {
 		BufferStrategy BS = getBufferStrategy();
 		if (BS == null) {
-			bimg = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
+			bimg = new BufferedImage(Width, Height, BufferedImage.TYPE_INT_RGB);
 			Pixels = ((DataBufferInt) bimg.getRaster().getDataBuffer()).getData();
 			createBufferStrategy(3);
 			return;
 		}
-		Screen.Render(Pixels);
+		Screen.RenderBack(Pixels);
 		Graphics g = BS.getDrawGraphics();
-		g.drawImage(bimg, 0, 0, WIDTH, HEIGHT, null);
+		g.drawImage(bimg, 0, 0, Width, Height, null);
 		g.dispose();
 		BS.show();
 	}
@@ -105,8 +107,8 @@ public class Main extends Canvas {
 	}
 
 	private void CleanUp() {
-		for (int i = 0; i < Pixels.length; i++)
-			Pixels[i] = 0;
+		Screen.clearPixels(Pixels);
 		Frame.dispose();
+		return;
 	}
 }
