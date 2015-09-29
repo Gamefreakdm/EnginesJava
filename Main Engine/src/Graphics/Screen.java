@@ -1,23 +1,29 @@
 package Graphics;
 
-import Main.Main;
-
 public class Screen {
-	public static void clearPixels(int[] p) {
-		for (int i = 0; i < p.length; i++)
-			p[i] = 0;
+	private static int[] Pixels;
+	private static int Width, Height;
+
+	public static void clearPixels() {
+		for (int i = 0; i < Pixels.length; i++)
+			Pixels[i] = 0;
 	}
 
-	public static void RenderBack(int[] p) {
-		clearPixels(p);
-		for (int y = 0; y < Main.Height; y++) {
-			if (y < 0 || y >= Main.Height)
+	public static void Render() {
+		for (int y = 0; y < Height; y++) {
+			if (y < 0 || y >= Height)
 				break;
-			for (int x = 0; x < Main.Width; x++) {
-				if (x < 0 || x >= Main.Width)
+			for (int x = 0; x < Width; x++) {
+				if (x < 0 || x >= Width)
 					break;
-				p[x + y * Main.Width] = 0x0ff00ff31;
+				Pixels[x + y * Width] = 0x0;
 			}
 		}
+	}
+
+	public static void setWHP(int w, int h, int[] p) {
+		Width = w;
+		Height = h;
+		Pixels = p;
 	}
 }

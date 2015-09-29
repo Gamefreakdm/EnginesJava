@@ -1,6 +1,6 @@
 package Graphics;
 
-public class Sprite {
+class Sprite {
 	public int[] Pixels;
 
 	public Sprite(int x, int y, SpriteSheet sheet) {

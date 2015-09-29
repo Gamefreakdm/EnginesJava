@@ -1,7 +1,9 @@
 package Main;
 
 import java.awt.Canvas;
+import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.Toolkit;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
@@ -9,23 +11,30 @@ import javax.swing.JFrame;
 import Graphics.Screen;
 
 public class Main extends Canvas implements Runnable {
-	private JFrame Frame;
 	private int[] Pixels;
-	private KeyHandler KH;
 	private boolean Running;
+	private final JFrame Frame;
 	private BufferedImage bimg;
+	private final KeyHandler KH;
 	private String Title = "Title";
+	private final int Width, Height;
+	private final Dimension screenSize;
 	private static final long serialVersionUID = 1L;
-	public static final int Width = 800, Height = 600;
+
+	private Main() {
+		System.out.println("[System] Starting...");
+		screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		Width = (int) screenSize.getWidth();
+		Height = (int) screenSize.getHeight();
+		KH = new KeyHandler();
+		Frame = new JFrame("Loading...");
+	}
 
 	public static void main(String[] args) {
-		System.out.println("[System] Starting...");
 		Main M = new Main();
-		M.KH = new KeyHandler();
-		M.Frame = new JFrame("Loading...");
 		M.Frame.add(M);
 		M.Frame.addKeyListener(M.KH);
-		M.Frame.setSize(Width, Height);
+		M.Frame.setSize(M.Width, M.Height);
 		M.Frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		M.Frame.setResizable(false);
 		M.Frame.setLocationRelativeTo(null);
@@ -43,18 +52,18 @@ public class Main extends Canvas implements Runnable {
 	}
 
 	public void run() {
-		long Timer = System.currentTimeMillis();
-		long lastTime = System.nanoTime();
 		int Frames = 0;
 		int Updates = 0;
+		long Timer = System.currentTimeMillis();
+		long lastTime = System.nanoTime();
 		double Delta = 0;
-		long NowTime = 0;
-		final double NS = 1000000000.0 / 120;
+		long nowTime = 0;
+		final double NS = 8333333.333333333;
 		System.out.println("[System] Started");
 		while (Running) {
-			NowTime = System.nanoTime();
-			Delta += (NowTime - lastTime) / NS;
-			lastTime = NowTime;
+			nowTime = System.nanoTime();
+			Delta += (nowTime - lastTime) / NS;
+			lastTime = nowTime;
 			while (Delta >= 1) {
 				Update();
 				Updates++;
@@ -75,7 +84,9 @@ public class Main extends Canvas implements Runnable {
 	private void KeyUpdate() {
 		Frame.requestFocus();
 		KH.Update();
-		if (KH.ESC)
+		if (!KH.Keys[0])
+			return;
+		if (KH.Keys[1])
 			Stop();
 	}
 
@@ -89,9 +100,10 @@ public class Main extends Canvas implements Runnable {
 			bimg = new BufferedImage(Width, Height, BufferedImage.TYPE_INT_RGB);
 			Pixels = ((DataBufferInt) bimg.getRaster().getDataBuffer()).getData();
 			createBufferStrategy(3);
+			Screen.setWHP(Width, Height, Pixels);
 			return;
 		}
-		Screen.RenderBack(Pixels);
+		Screen.Render();
 		Graphics g = BS.getDrawGraphics();
 		g.drawImage(bimg, 0, 0, Width, Height, null);
 		g.dispose();
@@ -107,8 +119,9 @@ public class Main extends Canvas implements Runnable {
 	}
 
 	private void CleanUp() {
-		Screen.clearPixels(Pixels);
+		if (Running)
+			return;
+		Screen.clearPixels();
 		Frame.dispose();
-		return;
 	}
 }
