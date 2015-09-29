@@ -16,7 +16,7 @@ public class Screen {
 			for (int x = 0; x < Width; x++) {
 				if (x < 0 || x >= Width)
 					break;
-				Pixels[x + y * Width] = 0x0;
+				Pixels[x + (y * Width)] = 0x0;
 			}
 		}
 	}
