@@ -1,15 +1,15 @@
 package Graphics;
 
 public class Screen {
-	private static int[] Pixels;
-	private static int Width, Height;
+	private int[] Pixels;
+	private int Width, Height;
 
-	public static void clearPixels() {
+	public void clearPixels() {
 		for (int i = 0; i < Pixels.length; i++)
 			Pixels[i] = 0;
 	}
 
-	public static void Render() {
+	public void Render() {
 		for (int y = 0; y < Height; y++) {
 			if (y < 0 || y >= Height)
 				break;
@@ -21,9 +21,17 @@ public class Screen {
 		}
 	}
 
-	public static void setWHP(int w, int h, int[] p) {
+	public void setWHP(int w, int h, int[] p) {
 		Width = w;
 		Height = h;
 		Pixels = p;
+	}
+
+	public void setPixels(int[] p) {
+		Pixels = p;
+	}
+
+	public int[] getPixels() {
+		return Pixels;
 	}
 }

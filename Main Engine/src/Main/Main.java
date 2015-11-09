@@ -11,12 +11,12 @@ import javax.swing.JFrame;
 import Graphics.Screen;
 
 public class Main extends Canvas implements Runnable {
-	private int[] Pixels;
 	private boolean Running;
 	private final JFrame Frame;
 	private BufferedImage bimg;
+	private final Screen screen;
 	private final KeyHandler KH;
-	private String Title = "Title";
+	private final String Title;
 	private final int Width, Height;
 	private final Dimension screenSize;
 	private static final long serialVersionUID = 1L;
@@ -24,10 +24,12 @@ public class Main extends Canvas implements Runnable {
 	private Main() {
 		System.out.println("[System] Starting...");
 		screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-		Width = (int) screenSize.getWidth();
-		Height = (int) screenSize.getHeight();
+		Width = 800;
+		Height = 600;
+		Title = "Title";
 		KH = new KeyHandler();
 		Frame = new JFrame("Loading...");
+		screen = new Screen();
 	}
 
 	public static void main(String[] args) {
@@ -58,7 +60,7 @@ public class Main extends Canvas implements Runnable {
 		long lastTime = System.nanoTime();
 		double Delta = 0;
 		long nowTime = 0;
-		final double NS = 8333333.333333333;
+		final double NS = 1000000000.0 / 60;
 		System.out.println("[System] Started");
 		while (Running) {
 			nowTime = System.nanoTime();
@@ -98,12 +100,12 @@ public class Main extends Canvas implements Runnable {
 		BufferStrategy BS = getBufferStrategy();
 		if (BS == null) {
 			bimg = new BufferedImage(Width, Height, BufferedImage.TYPE_INT_RGB);
-			Pixels = ((DataBufferInt) bimg.getRaster().getDataBuffer()).getData();
+			screen.setPixels(((DataBufferInt) bimg.getRaster().getDataBuffer()).getData());
 			createBufferStrategy(3);
-			Screen.setWHP(Width, Height, Pixels);
+			screen.setWHP(Width, Height, screen.getPixels());
 			return;
 		}
-		Screen.Render();
+		screen.Render();
 		Graphics g = BS.getDrawGraphics();
 		g.drawImage(bimg, 0, 0, Width, Height, null);
 		g.dispose();
@@ -121,7 +123,7 @@ public class Main extends Canvas implements Runnable {
 	private void CleanUp() {
 		if (Running)
 			return;
-		Screen.clearPixels();
+		screen.clearPixels();
 		Frame.dispose();
 	}
 }
