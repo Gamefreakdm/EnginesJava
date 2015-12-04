@@ -66,3 +66,6 @@ java.net.UnknownHostException: search.maven.org
 	at org.apache.commons.httpclient.protocol.ControllerThreadSocketFactory$1.doit(ControllerThreadSocketFactory.java:91) ~[na:na]
 	at org.apache.commons.httpclient.protocol.ControllerThreadSocketFactory$SocketTask.run(ControllerThreadSocketFactory.java:158) ~[na:na]
 	at java.lang.Thread.run(Unknown Source) ~[na:1.7.0_65]
+2015-12-02 10:11:45,160 [main] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is not out-of-date. No remote download required.
+2015-12-02 11:53:45,478 [main] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is not out-of-date. No remote download required.
+2015-12-03 09:36:02,042 [main] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is not out-of-date. No remote download required.
