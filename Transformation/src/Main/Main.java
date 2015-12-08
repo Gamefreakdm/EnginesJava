@@ -88,16 +88,29 @@ public class Main implements Runnable {
 		KH.Update();
 		if (KH.Keys[0])
 			Running = false;
+		if (KH.Keys[4] && screen.getGameState() == 't')
+			screen.setTrx((float) -1.2);
+
+		if (KH.Keys[5] && screen.getGameState() == 't')
+			screen.setTrx((float) 1.2);
+		if (KH.Keys[1] && screen.getGameState() == 't' && screen.getGameState() == 't')
+			screen.setTry((float) -1.2);
+
+		if (KH.Keys[2] && screen.getGameState() == 't' && screen.getGameState() == 't')
+			screen.setTry((float) 1.2);
 		if (Timer >= 10) {
-			if (KH.Keys[1] && screen.OpSelected >= 1) {
+			if (KH.Keys[1] && screen.OpSelected >= 1 && screen.getGameState() == 'm') {
 				screen.OpSelected -= 1;
 				Timer = 0;
 			}
-			if (KH.Keys[2] && screen.OpSelected + 1 <= 2) {
+			if (KH.Keys[2] && screen.OpSelected + 1 <= 2 && screen.getGameState() == 'm') {
 				screen.OpSelected += 1;
 				Timer = 0;
 			}
-			if (KH.Keys[3] && screen.OpSelected == 0) screen.set
+			if (KH.Keys[3] && screen.OpSelected == 0) {
+				screen.setGameState('t');
+				Timer = 0;
+			}
 		}
 	}
 
