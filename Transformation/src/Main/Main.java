@@ -95,6 +95,10 @@ public class Main implements Runnable {
 			screen.setTrx((float) 1.2);
 		if (KH.Keys[1] && screen.getGameState() == 't' && screen.getGameState() == 't')
 			screen.setTry((float) -1.2);
+		if (KH.Keys[1] && screen.getGameState() == 'r')
+			screen.setFlip(-100);
+		if (KH.Keys[2] && screen.getGameState() == 'r')
+			screen.setFlip(100);
 
 		if (KH.Keys[2] && screen.getGameState() == 't' && screen.getGameState() == 't')
 			screen.setTry((float) 1.2);
@@ -109,6 +113,10 @@ public class Main implements Runnable {
 			}
 			if (KH.Keys[3] && screen.OpSelected == 0) {
 				screen.setGameState('t');
+				Timer = 0;
+			}
+			if (KH.Keys[3] && screen.OpSelected == 1) {
+				screen.setGameState('r');
 				Timer = 0;
 			}
 		}

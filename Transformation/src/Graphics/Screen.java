@@ -16,6 +16,7 @@ public class Screen extends Canvas {
 	private int Width, Height;
 	private BufferedImage bimg;
 	private float Trx = 10, Try = 10;
+	private int flip = 100;
 
 	public void clearPixels() {
 		for (int i = 0; i < Pixels.length; i++) {
@@ -67,6 +68,12 @@ public class Screen extends Canvas {
 			RenderTrans(100, 100, Trx, Try);
 			g.drawImage(bimg, 0, 0, Width, Height, null);
 			break;
+		case 'r':
+			RenderMain(0);
+			g.drawImage(bimg, 0, 0, Width, Height, null);
+			g.setColor(Color.BLUE);
+			g.drawArc(10, 10, 600, 600, 0, flip);
+			break;
 		}
 		g.dispose();
 		BS.show();
@@ -115,5 +122,13 @@ public class Screen extends Canvas {
 	public void setTry(float y) {
 		if (Try > 1 && Try < Height)
 			Try += y;
+	}
+
+	public int getFlip() {
+		return flip;
+	}
+
+	public void setFlip(int flip) {
+		this.flip = flip;
 	}
 }
