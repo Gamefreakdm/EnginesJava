@@ -11,13 +11,16 @@ import javax.swing.JFrame;
 import Graphics.Screen;
 
 public class Main extends Canvas implements Runnable {
+	private int[] Pixels;
+	private Screen screen;
 	private boolean Running;
+	private final String Title;
 	private final JFrame Frame;
 	private BufferedImage bimg;
-	private final Screen screen;
 	private final KeyHandler KH;
-	private final String Title;
+	private final MouseHandler MH;
 	private final int Width, Height;
+	@SuppressWarnings("unused")
 	private final Dimension screenSize;
 	private static final long serialVersionUID = 1L;
 
@@ -28,12 +31,14 @@ public class Main extends Canvas implements Runnable {
 		Height = 600;
 		Title = "Title";
 		KH = new KeyHandler();
+		MH = new MouseHandler();
 		Frame = new JFrame("Loading...");
-		screen = new Screen();
 	}
 
 	public static void main(String[] args) {
 		Main M = new Main();
+		M.addMouseListener(M.MH);
+		M.addMouseMotionListener(M.MH);
 		M.Frame.add(M);
 		M.Frame.addKeyListener(M.KH);
 		M.Frame.setSize(M.Width, M.Height);
@@ -86,9 +91,7 @@ public class Main extends Canvas implements Runnable {
 	private void KeyUpdate() {
 		Frame.requestFocus();
 		KH.Update();
-		if (!KH.Keys[0])
-			return;
-		if (KH.Keys[1])
+		if (KH.Keys[0])
 			Stop();
 	}
 
@@ -99,25 +102,24 @@ public class Main extends Canvas implements Runnable {
 	private void Render() {
 		BufferStrategy BS = getBufferStrategy();
 		if (BS == null) {
-			bimg = new BufferedImage(Width, Height, BufferedImage.TYPE_INT_RGB);
-			screen.setPixels(((DataBufferInt) bimg.getRaster().getDataBuffer()).getData());
+			bimg = new BufferedImage(Width, Height - 10, BufferedImage.TYPE_INT_RGB);
+			Pixels = ((DataBufferInt) bimg.getRaster().getDataBuffer()).getData();
 			createBufferStrategy(3);
-			screen.setWHP(Width, Height, screen.getPixels());
+			screen = new Screen(Width, Height, Pixels);
 			return;
 		}
+		screen.clearPixels();
 		screen.Render();
 		Graphics g = BS.getDrawGraphics();
-		g.drawImage(bimg, 0, 0, Width, Height, null);
+		g.drawImage(bimg, 0, 0, Width, Height - 10, null);
 		g.dispose();
 		BS.show();
 	}
 
 	public void Stop() {
-		if (!Running)
-			System.exit(0);
 		System.out.println("[System] Stopping...");
 		CleanUp();
-		Running = false;
+		System.exit(0);
 	}
 
 	private void CleanUp() {
