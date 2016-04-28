@@ -31,4 +31,7 @@
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.io.Writer"/>
 <fullyQualifiedTypeName name="java.io.FileWriter"/>
+<fullyQualifiedTypeName name="Main.Input.MouseHandler"/>
+<fullyQualifiedTypeName name="Main.Input.KeyHandler"/>
+<fullyQualifiedTypeName name="Graphics.Screen"/>
 </qualifiedTypeNameHistroy>

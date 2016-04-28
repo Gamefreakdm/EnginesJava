@@ -1,14 +1,14 @@
 package Main;
 
 import java.awt.Canvas;
-import java.awt.Dimension;
 import java.awt.Graphics;
-import java.awt.Toolkit;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
 import javax.swing.JFrame;
-import Graphics.Screen;
+import Graphics.Render.Screen;
+import Main.Input.KeyHandler;
+import Main.Input.MouseHandler;
 
 public class Main extends Canvas implements Runnable {
 	private int[] Pixels;
@@ -19,16 +19,11 @@ public class Main extends Canvas implements Runnable {
 	private BufferedImage bimg;
 	private final KeyHandler KH;
 	private final MouseHandler MH;
-	private final int Width, Height;
-	@SuppressWarnings("unused")
-	private final Dimension screenSize;
+	private final int Width = 800, Height = 600;
 	private static final long serialVersionUID = 1L;
 
-	private Main() {
+	public Main() {
 		System.out.println("[System] Starting...");
-		screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-		Width = 800;
-		Height = 600;
 		Title = "Title";
 		KH = new KeyHandler();
 		MH = new MouseHandler();
@@ -104,7 +99,7 @@ public class Main extends Canvas implements Runnable {
 		if (BS == null) {
 			bimg = new BufferedImage(Width, Height - 10, BufferedImage.TYPE_INT_RGB);
 			Pixels = ((DataBufferInt) bimg.getRaster().getDataBuffer()).getData();
-			createBufferStrategy(3);
+			createBufferStrategy(1);
 			screen = new Screen(Width, Height, Pixels);
 			return;
 		}
