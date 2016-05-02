@@ -1,0 +1,43 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class Prob02 {
+	public static void main(String[] args) {
+		File file = new File("Prob02.in.txt");
+		try {
+			Scanner scanner = new Scanner(file);
+			int quarters = 0;
+			int dimes = 0;
+			int nickles = 0;
+			int pennies = 0;
+			double name = 0;
+			String Input = "";
+			int t = scanner.nextInt();
+			scanner.skip("$");
+			double amount = scanner.nextDouble();
+			System.out.println(amount);
+			double originamount = amount;
+			while (amount != 0) {
+				quarters = (int) (amount / .25);
+				amount = amount - quarters * .25;
+				dimes = (int) (amount / .10);
+				amount = amount - dimes * .10;
+				nickles = (int) (amount / .05);
+				amount = amount - nickles * .05;
+				pennies = (int) (amount / .01);
+				amount = amount - pennies * .01;
+			}
+			System.out.println("$" + originamount);
+			System.out.println("Quarters=" + quarters);
+			System.out.println("Dimes=" + dimes);
+			System.out.println("Nickles=" + nickles);
+			System.out.println("Pennies=" + pennies);
+		} catch (
+
+		FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
+	}
+}

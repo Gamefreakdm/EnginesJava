@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;CodeQuest/src/Main.java&apos;" deleteContents="false" description="Delete resource &apos;CodeQuest/src/Main.java&apos;" element1="/CodeQuest/src/Main.java" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1462025893441"/>&#x0A;<refactoring comment="Delete resource &apos;CodeQuest/Resources&apos;" deleteContents="false" description="Delete resource &apos;CodeQuest/Resources&apos;" element1="/CodeQuest/Resources" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1462030483421"/>
+</session>
