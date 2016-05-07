@@ -85,3 +85,4 @@ java.net.UnknownHostException: search.maven.org
 2016-04-30 07:57:54,581 [Worker-15] INFO  c.g.t.t.d.PublishedGradleVersions - Updating Gradle version information cache failed. Using outdated cache.
 2016-04-30 09:34:53,104 [Worker-38] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
 2016-04-30 09:34:53,246 [Worker-38] INFO  c.g.t.t.d.PublishedGradleVersions - Updating Gradle version information cache failed. Using outdated cache.
+2016-05-04 08:14:51,350 [main] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is out-of-date. Remote download required.

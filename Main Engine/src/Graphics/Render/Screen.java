@@ -6,7 +6,7 @@ public class Screen {
 
 	public Screen(int W, int H, int[] p) {
 		Width = W;
-		Height = H - 10;
+		Height = H;
 		Pixels = p;
 	}
 

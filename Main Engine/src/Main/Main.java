@@ -97,7 +97,7 @@ public class Main extends Canvas implements Runnable {
 	private void Render() {
 		BufferStrategy BS = getBufferStrategy();
 		if (BS == null) {
-			bimg = new BufferedImage(Width, Height - 10, BufferedImage.TYPE_INT_RGB);
+			bimg = new BufferedImage(Width, Height, BufferedImage.TYPE_INT_RGB);
 			Pixels = ((DataBufferInt) bimg.getRaster().getDataBuffer()).getData();
 			createBufferStrategy(1);
 			screen = new Screen(Width, Height, Pixels);
@@ -106,7 +106,7 @@ public class Main extends Canvas implements Runnable {
 		screen.clearPixels();
 		screen.Render();
 		Graphics g = BS.getDrawGraphics();
-		g.drawImage(bimg, 0, 0, Width, Height - 10, null);
+		g.drawImage(bimg, 0, 0, Width, Height, null);
 		g.dispose();
 		BS.show();
 	}
