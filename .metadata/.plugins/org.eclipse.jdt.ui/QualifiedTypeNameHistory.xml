@@ -36,4 +36,6 @@
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="java.awt.Color"/>
+<fullyQualifiedTypeName name="Input.MouseHandler"/>
+<fullyQualifiedTypeName name="Input.KeyHandler"/>
 </qualifiedTypeNameHistroy>

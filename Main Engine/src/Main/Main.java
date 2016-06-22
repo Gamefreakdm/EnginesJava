@@ -7,8 +7,8 @@ import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
 import javax.swing.JFrame;
 import Graphics.Render.Screen;
-import Main.Input.KeyHandler;
-import Main.Input.MouseHandler;
+import Input.KeyHandler;
+import Input.MouseHandler;
 
 public class Main extends Canvas implements Runnable {
 	private int[] Pixels;

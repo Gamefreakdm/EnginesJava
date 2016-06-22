@@ -1,0 +1,9 @@
+
+public class red {
+	public int pub = 10;
+	private int priv = 20;
+
+	public int rainbow() {
+		return priv;
+	}
+}

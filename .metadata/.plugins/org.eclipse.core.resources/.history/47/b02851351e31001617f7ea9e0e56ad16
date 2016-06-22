@@ -1,0 +1,9 @@
+
+public class Red {
+	public int  pub = 10;
+	private int priv = 20;
+	
+	public int getpriv() {
+		return priv;
+	}
+}

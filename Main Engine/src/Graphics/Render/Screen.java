@@ -16,15 +16,9 @@ public class Screen {
 	}
 
 	public void Render() {
-		for (int y = 0; y < Height; y++) {
-			if (y < 0 || y >= Height)
-				break;
-			for (int x = 0; x < Width; x++) {
-				if (x < 0 || x >= Width)
-					break;
+		for (int y = 0; y < Height; y++)
+			for (int x = 0; x < Width; x++)
 				Pixels[x + (y * Width)] = 0x00ff00;
-			}
-		}
 	}
 
 	public int[] getPixels() {

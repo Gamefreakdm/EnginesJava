@@ -44,12 +44,13 @@
 		<item value="400" key="height"/>
 	</section>
 	<section name="FatJarPackageWizard">
-		<item value="C:\Users\Dylan\Google Drive\Work\Programming\Engines in Java" key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION"/>
-		<item value="D:\Test.jar" key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION"/>
-		<item value="Main (2) - Main Engine" key="FatJarPackageWizardPage.LAUNCH_CONFIGURATION_SELECTION_NAME"/>
+		<item value="C:\Users\Dylan\Google Drive\Work\Programming\Engines in Java.xml" key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION"/>
+		<item value="C:\Users\NanoT\Desktop\Test.jar" key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION"/>
+		<item value="Main (16) - Tutorial" key="FatJarPackageWizardPage.LAUNCH_CONFIGURATION_SELECTION_NAME"/>
 		<item value="false" key="FatJarPackageWizardPage.ANTSCRIPT_SAVE"/>
 		<item value="2" key="FatJarPackageWizardPage.LIBRARY_HANDLING"/>
 		<list key="FatJarPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="C:\Users\NanoT\Desktop\Test.jar"/>
 			<item value="D:\Test.jar"/>
 			<item value="C:\Users\Dylan\Desktop\Test.jar"/>
 			<item value="C:\Users\Dylan\Desktop\2D Engine.jar"/>

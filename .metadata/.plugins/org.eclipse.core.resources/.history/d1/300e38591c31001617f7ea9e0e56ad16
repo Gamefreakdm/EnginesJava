@@ -1,0 +1,11 @@
+public class Main {
+	int global = 20;
+
+	public static void main(String args[]) {
+		int local = 30;
+	}
+
+	public void method() {
+	 global++;
+	}
+}

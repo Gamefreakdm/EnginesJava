@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Encapsulate field &apos;Red.otherred&apos; in &apos;Red&apos;&#x0D;&#x0A;- Original project: &apos;Tutorial&apos;&#x0D;&#x0A;- Original element: &apos;Red.otherred&apos;&#x0D;&#x0A;- Getter method name: &apos;getOtherred&apos;&#x0D;&#x0A;- Setter method name: &apos;setOtherred&apos;&#x0D;&#x0A;- Field visibility: &apos;public&apos;&#x0D;&#x0A;- Use getter and setter methods in declaring type" comments="false" declaring="true" description="Encapsulate field &apos;otherred&apos;" flags="589830" getter="getOtherred" id="org.eclipse.jdt.ui.self.encapsulate" input="/src&lt;{Red.java[Red^otherred" insertion="-1" setter="setOtherred" stamp="1464926382457" version="1.0" visibility="1"/>
+</session>

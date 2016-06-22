@@ -1,0 +1,4 @@
+
+public class Red {
+	public int  pub = 10;
+}

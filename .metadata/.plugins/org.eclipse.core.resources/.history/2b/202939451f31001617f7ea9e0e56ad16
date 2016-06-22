@@ -1,0 +1,8 @@
+public class Main {
+	 red r = new red();
+
+	public static void main(String args[]) {
+		Main m = new Main();
+		System.out.println(m.r.rainbow());
+	}
+}
