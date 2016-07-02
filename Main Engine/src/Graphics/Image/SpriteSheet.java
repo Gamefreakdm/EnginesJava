@@ -5,8 +5,8 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 public class SpriteSheet {
-	private int SIZE;
 	private int[] Pixels;
+	private int Width, Height;
 
 	public SpriteSheet(String path) {
 		Load(path);
@@ -15,16 +15,21 @@ public class SpriteSheet {
 	private void Load(String path) {
 		try {
 			BufferedImage img = ImageIO.read(SpriteSheet.class.getResource(path));
-			SIZE = img.getWidth();
-			Pixels = new int[SIZE * SIZE];
+			Width = img.getWidth();
+			Height = img.getHeight();
+			Pixels = new int[Width * Height];
 			img.getRGB(0, 0, img.getWidth(), img.getHeight(), Pixels, 0, img.getWidth());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
-	public int getSize() {
-		return SIZE;
+	public int getWidth() {
+		return Width;
+	}
+
+	public int getHeight() {
+		return Height;
 	}
 
 	public int[] getPixels() {

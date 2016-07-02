@@ -1,5 +1,0 @@
-
-public class Red {
-	public int  pub = 10;
-	private int priv = 20;
-}

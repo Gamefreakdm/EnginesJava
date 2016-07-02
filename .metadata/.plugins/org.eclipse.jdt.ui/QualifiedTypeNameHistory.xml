@@ -38,4 +38,5 @@
 <fullyQualifiedTypeName name="java.awt.Color"/>
 <fullyQualifiedTypeName name="Input.MouseHandler"/>
 <fullyQualifiedTypeName name="Input.KeyHandler"/>
+<fullyQualifiedTypeName name="Graphics.Image.Image"/>
 </qualifiedTypeNameHistroy>
