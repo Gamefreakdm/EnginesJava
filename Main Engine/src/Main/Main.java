@@ -7,35 +7,34 @@ import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
 import javax.swing.JFrame;
 import Graphics.Render.Screen;
-import Input.KeyHandler;
-import Input.MouseHandler;
+import Input.InputHandler;
 
 public class Main extends Canvas implements Runnable {
 	private int[] Pixels;
 	private Screen screen;
+	private final Game game;
 	private boolean Running;
 	private final String Title;
 	private final JFrame Frame;
 	private BufferedImage bimg;
-	private final KeyHandler KH;
-	private final MouseHandler MH;
+	private final InputHandler IH;
 	private final int Width = 800, Height = 600;
 	private static final long serialVersionUID = 1L;
 
 	public Main() {
 		System.out.println("[System] Starting...");
 		Title = "Title";
-		KH = new KeyHandler();
-		MH = new MouseHandler();
 		Frame = new JFrame("Loading...");
+		game = new Game();
+		IH = new InputHandler();
 	}
 
 	public static void main(String[] args) {
 		Main M = new Main();
-		M.addMouseListener(M.MH);
-		M.addMouseMotionListener(M.MH);
+		M.addMouseListener(M.IH);
+		M.addMouseMotionListener(M.IH);
 		M.Frame.add(M);
-		M.Frame.addKeyListener(M.KH);
+		M.Frame.addKeyListener(M.IH);
 		M.Frame.setSize(M.Width, M.Height);
 		M.Frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		M.Frame.setResizable(false);
@@ -67,7 +66,7 @@ public class Main extends Canvas implements Runnable {
 			Delta += (nowTime - lastTime) / NS;
 			lastTime = nowTime;
 			while (Delta >= 1) {
-				Update();
+				game.Update(IH, Frame);
 				Updates++;
 				Delta--;
 			}
@@ -83,17 +82,6 @@ public class Main extends Canvas implements Runnable {
 		Stop();
 	}
 
-	private void KeyUpdate() {
-		Frame.requestFocus();
-		KH.Update();
-		if (KH.Keys[0])
-			Stop();
-	}
-
-	private void Update() {
-		KeyUpdate();
-	}
-
 	private void Render() {
 		BufferStrategy BS = getBufferStrategy();
 		if (BS == null) {
@@ -104,7 +92,7 @@ public class Main extends Canvas implements Runnable {
 			return;
 		}
 		screen.clearPixels();
-		screen.RenderCol(0, 0, Width, Height, 0x00ff00);
+		game.Render(screen);
 		Graphics g = BS.getDrawGraphics();
 		g.drawImage(bimg, 0, 0, Width, Height, null);
 		g.dispose();

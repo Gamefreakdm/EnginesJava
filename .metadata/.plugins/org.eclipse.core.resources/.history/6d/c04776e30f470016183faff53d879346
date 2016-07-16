@@ -1,0 +1,23 @@
+package GameObject;
+
+import Graphics.Image.Sprite;
+import Graphics.Render.Screen;
+
+public abstract class Item extends Entity {
+	private final Sprite sprite;
+	private final Game game;
+
+	public Item(float x, float y, Sprite sp) {
+		setX(x);
+		setY(y);
+		sprite = sp;
+	}
+
+	public abstract void Update();
+
+	public abstract void Render(Screen screen);
+
+	public Sprite getSprite() {
+		return sprite;
+	}
+}

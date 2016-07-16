@@ -1,0 +1,7 @@
+package Graphics.Render;
+
+import Graphics.Image.Image;
+
+public class Backround {
+	private Image Back;
+}

@@ -1,0 +1,9 @@
+package Graphics.Render;
+
+public class BackroundHandler {
+	private Backround Curback;
+
+	public Backround getCurBack() {
+		return Curback;
+	}
+}

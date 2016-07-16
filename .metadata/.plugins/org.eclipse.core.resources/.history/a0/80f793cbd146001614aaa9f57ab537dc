@@ -1,0 +1,8 @@
+package GameObject;
+
+public abstract class Entity {
+	private int ID;
+	private float X, Y;
+	
+	public abstract void Update();
+}

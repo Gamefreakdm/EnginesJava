@@ -7,42 +7,42 @@ public class AnimatedSprite {
 	private final Sprite sprites[];
 	private final int WIDTH, HEIGHT;
 
-	public AnimatedSprite(SpriteSheet sheet, int w, int h) {
-		sprites = new Sprite[8];
+	public AnimatedSprite(SpriteSheet sheet, int w, int h, int maxy, int maxx) {
+		sprites = new Sprite[maxy * maxx];
 		WIDTH = w;
 		HEIGHT = h;
-		Load(w, h, sheet);
+		Load(maxy, maxx, w, h, sheet);
 	}
 
-	public AnimatedSprite(SpriteSheet sheet, int ss) {
-		sprites = new Sprite[8];
+	public AnimatedSprite(SpriteSheet sheet, int ss, int maxy, int maxx) {
+		sprites = new Sprite[maxy * maxx];
 		WIDTH = ss;
 		HEIGHT = ss;
-		Load(ss, sheet);
+		Load(maxy, maxx, ss, sheet);
 	}
 
-	private void Load(int ss, SpriteSheet sheet) {
+	private void Load(int maxy, int maxx, int ss, SpriteSheet sheet) {
 		int iter = 0;
 		if (iter < sprites.length)
-			for (int y = 0; y < 2; y++)
-				for (int x = 0; x < 4; x++) {
+			for (int y = 0; y < maxy; y++)
+				for (int x = 0; x < maxx; x++) {
 					sprites[iter] = new Sprite(x, y, ss, sheet);
 					iter++;
 				}
 	}
 
-	private void Load(int w, int h, SpriteSheet sheet) {
+	private void Load(int maxy, int maxx, int w, int h, SpriteSheet sheet) {
 		int iter = 0;
 		if (iter < sprites.length)
-			for (int y = 0; y < 2; y++)
-				for (int x = 0; x < 4; x++) {
+			for (int y = 0; y < maxy; y++)
+				for (int x = 0; x < maxx; x++) {
 					sprites[iter] = new Sprite(x, y, w, h, sheet);
 					iter++;
 				}
 	}
 
 	public Sprite getSprite(int num) {
-		return sprites[num - 1];
+		return sprites[num];
 	}
 
 	public int getWIDTH() {

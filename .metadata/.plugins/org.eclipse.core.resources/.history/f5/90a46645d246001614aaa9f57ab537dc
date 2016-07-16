@@ -1,0 +1,22 @@
+package GameObject;
+
+import Graphics.Render.Screen;
+
+public abstract class Entity {
+	private float X, Y;
+	private final int ID;
+
+	public Entity(int id, float x, float y) {
+		ID = id;
+		X = x;
+		Y = y;
+	}
+
+	public abstract void Update();
+
+	public abstract void Render(Screen screen);
+
+	public int getID() {
+		return ID;
+	}
+}

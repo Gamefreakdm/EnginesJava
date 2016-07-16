@@ -1,0 +1,10 @@
+package Input;
+
+import java.awt.event.KeyEvent;
+
+public class Controller {
+
+	public void Update() {
+		KeyEvent KE = new KeyEvent();
+	}
+}

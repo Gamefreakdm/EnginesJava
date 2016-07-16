@@ -1,0 +1,48 @@
+package GameObject;
+
+import java.util.Vector;
+
+import Graphics.Render.Screen;
+
+public class MobHandler {
+	private Vector<Mob> MobList = new Vector<Mob>(1);
+	private Vector<Item> ItemList = new Vector<Item>(1);
+
+	public void UpdateMobs() {
+		for (int i = 0; i > MobList.size(); i++) {
+			if (MobList.get(i) != null)
+				MobList.get(i).Update();
+		}
+	}
+
+	public void RenderMobs(Screen screen) {
+		for (int i = 0; i > MobList.size(); i++) {
+			if (MobList.get(i) != null)
+				MobList.get(i).Render(screen);
+		}
+	}
+
+	public void addMob(Mob mob) {
+		if (MobList.get(MobList.size()) != null)
+			MobList.add(mob);
+		else
+			MobList.setSize(MobList.size() + 1);
+	}
+
+	public void removeMob(Mob mob) {
+		MobList.remove(mob);
+		MobList.setSize(MobList.size() - 1);
+	}
+
+	public void addItem(Item item) {
+		if (MobList.get(ItemList.size()) != null)
+			ItemList.add(item);
+		else
+			ItemList.setSize(ItemList.size() + 1);
+	}
+
+	public void removeItem(Item item) {
+		ItemList.remove(item);
+		ItemList.setSize(ItemList.size() - 1);
+	}
+}

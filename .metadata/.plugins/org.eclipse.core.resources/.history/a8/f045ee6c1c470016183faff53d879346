@@ -1,0 +1,4 @@
+package Graphics.GUI;
+
+public class GUIHandler {
+}

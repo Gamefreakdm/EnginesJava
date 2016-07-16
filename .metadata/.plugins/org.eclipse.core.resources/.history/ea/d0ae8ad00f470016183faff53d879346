@@ -1,0 +1,19 @@
+package GameObject;
+
+import Graphics.Image.Sprite;
+
+public abstract class Item extends Entity {
+	private final Sprite sprite;
+
+	public Item(float x, float y, Sprite sp) {
+		setX(x);
+		setY(y);
+		sprite = sp;
+	}
+
+	public abstract void Update();
+
+	public Sprite getSprite() {
+		return sprite;
+	}
+}

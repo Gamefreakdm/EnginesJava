@@ -1,0 +1,7 @@
+package Input;
+
+public class Controller {
+
+	public void Update() {
+	}
+}

@@ -1,0 +1,4 @@
+package Level.Tile;
+
+public abstract class Tile {
+}
