@@ -1,6 +1,0 @@
-package GameObject;
-
-public abstract class Entity {
-	private float X, Y;
-	private int ID;
-}

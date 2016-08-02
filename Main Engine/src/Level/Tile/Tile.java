@@ -3,26 +3,22 @@ package Level.Tile;
 import GameObject.Entity.Mob;
 import Graphics.Image.Sprite;
 import Graphics.Render.Screen;
-import Main.Game;
 
-public abstract class Tile {
-	private int X, Y;
-	private final Game game;
+public class Tile {
 	private final Sprite sprite;
 	private final boolean IsSolid;
 
-	public Tile(int x, int y, Sprite sp, boolean issolid, Game g) {
+	public Tile(Sprite sp, boolean issolid) {
 		sprite = sp;
 		IsSolid = issolid;
-		setX(x);
-		setY(y);
-		game = g;
 	}
 
-	public abstract void Render(Screen screen);
+	public void Render(Screen screen, int x, int y) {
+		screen.RenderTile(this, x * sprite.getWidth(), y * sprite.getHeight());
+	}
 
-	public boolean Collision(float x, float y, Mob mob) {
-		if (x >= getX() && x <= getX() + getSprite().getWidth() && y <= getY() && y >= getY() + getSprite().getHeight())
+	public boolean Collision(float xt, float yt, Mob mob) {
+		if (mob.getX() >= xt && mob.getX() <= yt + getSprite().getWidth() && mob.getY() <= yt && mob.getY() >= yt + getSprite().getHeight())
 			return true;
 		return false;
 	}
@@ -33,25 +29,5 @@ public abstract class Tile {
 
 	public boolean isIsSolid() {
 		return IsSolid;
-	}
-
-	public int getX() {
-		return X;
-	}
-
-	public void setX(int x) {
-		X = x;
-	}
-
-	public int getY() {
-		return Y;
-	}
-
-	public void setY(int y) {
-		Y = y;
-	}
-
-	public Game getGame() {
-		return game;
 	}
 }

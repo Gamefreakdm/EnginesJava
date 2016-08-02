@@ -1,7 +1,0 @@
-package Graphics.Render;
-
-import Graphics.Image.Image;
-
-public class Backround {
-	private vector<Image> backs = new Vector<Image>;
-}

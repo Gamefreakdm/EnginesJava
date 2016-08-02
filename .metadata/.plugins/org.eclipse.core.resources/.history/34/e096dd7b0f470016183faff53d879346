@@ -1,7 +1,0 @@
-package GameObject;
-
-import Graphics.Image.Sprite;
-
-public class Item extends Entity {
-	private Sprite sprite;
-}

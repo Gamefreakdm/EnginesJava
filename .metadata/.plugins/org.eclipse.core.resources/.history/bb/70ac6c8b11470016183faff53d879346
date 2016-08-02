@@ -1,9 +1,0 @@
-package Level.Tile;
-
-import Graphics.Image.Sprite;
-
-public class Tile {
-	private int X, Y;
-	private boolean IsSolid;
-	private final Sprite sprite;
-}

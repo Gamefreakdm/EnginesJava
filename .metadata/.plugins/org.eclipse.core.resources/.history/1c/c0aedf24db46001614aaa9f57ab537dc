@@ -1,7 +1,0 @@
-package GameObject;
-
-public class Player extends Mob {
-
-	public Player() {
-	}
-}

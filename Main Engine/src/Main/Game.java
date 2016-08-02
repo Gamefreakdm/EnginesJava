@@ -2,37 +2,24 @@ package Main;
 
 import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
-import GameObject.Entity.EntityHanlder;
-import Graphics.Render.Screen;
 import Input.InputHandler;
 
 public class Game {
-	private String gs;
 	private double Time = 0;
-	private EntityHanlder EnH = new EntityHanlder();
+	private String gs = "Main";
 
-	public void Update(InputHandler IH, JFrame frame) {
+	public void Update() {
 		if (Time >= 20.0)
 			Time = 0;
 		Time += 0.1;
-		frame.requestFocus();
-		KeyUpdate(IH);
-		UpdateGO();
 	}
 
-	private void UpdateGO() {
-		EnH.UpdateMobs();
-		EnH.UpdateItems();
-	}
-
-	private void KeyUpdate(InputHandler IH) {
-		if (IH.getKey(KeyEvent.VK_ESCAPE))
+	public void KeyUpdate(JFrame Frame) {
+		Frame.requestFocus();
+		if (InputHandler.getKey(KeyEvent.VK_ESCAPE))
 			System.exit(0);
-	}
-
-	public void Render(Screen screen) {
-		EnH.RenderMobs(screen);
-		EnH.RenderItems(screen);
+		if (gs == "Playing") {
+		}
 	}
 
 	public double getTime() {

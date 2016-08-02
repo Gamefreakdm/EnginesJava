@@ -21,7 +21,6 @@
 <fullyQualifiedTypeName name="Level.Level"/>
 <fullyQualifiedTypeName name="Entity.Entity"/>
 <fullyQualifiedTypeName name="org.lwjgl.opengl.Display"/>
-<fullyQualifiedTypeName name="Main.Main"/>
 <fullyQualifiedTypeName name="java.awt.image.BufferedImage"/>
 <fullyQualifiedTypeName name="java.awt.event.MouseListener"/>
 <fullyQualifiedTypeName name="java.awt.event.MouseMotionListener"/>
@@ -40,4 +39,7 @@
 <fullyQualifiedTypeName name="Graphics.Image.AnimatedSprite"/>
 <fullyQualifiedTypeName name="java.awt.event.KeyEvent"/>
 <fullyQualifiedTypeName name="Graphics.Image.Image"/>
+<fullyQualifiedTypeName name="GameObject.Entity.EntityHanlder"/>
+<fullyQualifiedTypeName name="java.awt.Graphics"/>
+<fullyQualifiedTypeName name="Main.Main"/>
 </qualifiedTypeNameHistroy>

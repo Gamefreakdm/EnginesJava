@@ -11,18 +11,14 @@ import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
 
 public class InputHandler implements FocusListener, KeyListener, MouseListener, MouseMotionListener, MouseWheelListener {
-	private final boolean[] Key = new boolean[68836];
+	private static final boolean[] Key = new boolean[68836];
 
 	public void keyPressed(KeyEvent KP) {
-		int keyCode = KP.getKeyCode();
-		if (keyCode > 0 && keyCode < Key.length)
-			Key[keyCode] = true;
+		Key[KP.getKeyCode()] = true;
 	}
 
 	public void keyReleased(KeyEvent KR) {
-		int keyCode = KR.getKeyCode();
-		if (keyCode > 0 && keyCode < Key.length)
-			Key[keyCode] = false;
+		Key[KR.getKeyCode()] = false;
 	}
 
 	public void keyTyped(KeyEvent KT) {
@@ -77,7 +73,7 @@ public class InputHandler implements FocusListener, KeyListener, MouseListener, 
 		return mxc;
 	}
 
-	public boolean getKey(int code) {
+	public static boolean getKey(int code) {
 		return Key[code];
 	}
 }
