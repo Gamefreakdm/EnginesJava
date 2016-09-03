@@ -6,28 +6,40 @@ import Graphics.Image.Sprite;
 import Graphics.Render.Screen;
 import Main.Game;
 
-public abstract class AnimatedTile {
-	private int X, Y;
+public class AnimatedTile {
+	private double PF = 0;
+	private int Frame = 0;
 	private Sprite sprite;
 	private final Game game;
+	private final double Ft;
 	private final boolean IsSolid;
 	private final AnimatedSprite sprites;
 
-	public AnimatedTile(int x, int y, AnimatedSprite sps, boolean issolid, Game g) {
+	public AnimatedTile(AnimatedSprite sps, boolean issolid, Game g, double FrameTime) {
 		sprites = sps;
 		sprite = sps.getSprite(0);
 		IsSolid = issolid;
-		setX(x);
-		setY(y);
 		game = g;
+		Ft = FrameTime;
+		PF = game.getTime();
 	}
 
-	// TODO: Animated Tile Function
+	public void Anim() {
+		if (PF == game.getTime() - Ft) {
+			if (Frame >= sprites.getSize())
+				Frame = 0;
+			Frame++;
+			sprite = sprites.getSprite(Frame);
+			PF = game.getTime();
+		}
+	}
 
-	public abstract void Render(Screen screen);
+	public void Render(Screen screen, float x, float y) {
+		screen.RenderAnTile(this, x * sprite.getWidth(), y * sprite.getHeight());
+	}
 
 	public boolean Collision(float x, float y, Mob mob) {
-		if (x >= getX() && x <= getX() + getSprite().getWidth() && y <= getY() && y >= getY() + getSprite().getHeight())
+		if (mob.getX() >= x && mob.getX() <= x + getSprite().getWidth() && mob.getY() <= y && mob.getY() >= y + getSprite().getHeight())
 			return true;
 		return false;
 	}
@@ -38,22 +50,6 @@ public abstract class AnimatedTile {
 
 	public boolean isIsSolid() {
 		return IsSolid;
-	}
-
-	public int getX() {
-		return X;
-	}
-
-	public void setX(int x) {
-		X = x;
-	}
-
-	public int getY() {
-		return Y;
-	}
-
-	public void setY(int y) {
-		Y = y;
 	}
 
 	public Game getGame() {

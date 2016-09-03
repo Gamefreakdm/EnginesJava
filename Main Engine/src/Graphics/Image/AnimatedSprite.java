@@ -45,6 +45,10 @@ public class AnimatedSprite {
 		return sprites[num];
 	}
 
+	public int getSize() {
+		return sprites.length;
+	}
+
 	public int getWIDTH() {
 		return WIDTH;
 	}

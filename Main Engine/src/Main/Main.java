@@ -3,32 +3,18 @@ package Main;
 import java.awt.Canvas;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
-import java.awt.image.BufferedImage;
-import java.awt.image.DataBufferInt;
 import GameObject.Entity.EntityHandler;
-import javax.swing.JFrame;
 import Graphics.Render.Screen;
 import Input.InputHandler;
 
-public class Main extends Canvas implements Runnable {
-	private static final long serialVersionUID = 1L;
-	private final int Width = 800, Height = 600;
+public class Main implements Runnable {
 	private final InputHandler IH = new InputHandler();
-	private final JFrame Frame = new JFrame("Loading...");
+	private Window Win1;
 
 	public static void main(String[] args) {
 		System.out.println("[System] Starting...");
 		Main M = new Main();
-		M.addMouseListener(M.IH);
-		M.addMouseMotionListener(M.IH);
-		M.Frame.add(M);
-		M.Frame.addKeyListener(M.IH);
-		M.Frame.setSize(M.Width, M.Height);
-		M.Frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		M.Frame.setResizable(false);
-		M.Frame.setLocationRelativeTo(null);
-		M.Frame.setUndecorated(false);
-		M.Frame.setVisible(true);
+		M.Win1 = new Window(800, 600, "Win1", M.IH);
 		M.Start();
 	}
 
@@ -60,7 +46,7 @@ public class Main extends Canvas implements Runnable {
 			lastTime = nowTime;
 			while (Delta >= 1) {
 				game.Update();
-				game.KeyUpdate(Frame);
+				game.KeyUpdate(Win1.getFrame());
 				Updates++;
 				Delta--;
 			}
@@ -68,7 +54,7 @@ public class Main extends Canvas implements Runnable {
 			Frames++;
 			if (System.currentTimeMillis() - Timer >= 1000) {
 				Timer += 1000;
-				Frame.setTitle(Title + "   |   " + Frames + " Fps" + "   |   " + Updates + " Updates");
+				Win1.getFrame().setTitle(Title + "   |   " + Frames + " Fps" + "   |   " + Updates + " Updates");
 				Frames = 0;
 				Updates = 0;
 			}
@@ -76,9 +62,7 @@ public class Main extends Canvas implements Runnable {
 		Stop();
 	}
 
-	private final BufferedImage bimg = new BufferedImage(Width, Height, BufferedImage.TYPE_INT_RGB);
-	private final int[] Pixels = ((DataBufferInt) bimg.getRaster().getDataBuffer()).getData();
-	private final Screen screen = new Screen(Width, Height, Pixels);
+	private final Screen screen = new Screen(Win1.getWidth(), Win1.getHeight(), Win1.getPixels());
 
 	private void Render() {
 		final BufferStrategy BS = getBufferStrategy();
@@ -91,9 +75,9 @@ public class Main extends Canvas implements Runnable {
 			EntityHandler.RenderMobs(screen);
 			EntityHandler.RenderItems(screen);
 		}
-		screen.RenderCol(0, 0, Width, Height, 0x0ff00ff);
+		screen.RenderCol(0, 0, Win1.getWidth(), Win1.getHeight(), 0x0ff00ff);
 		Graphics g = BS.getDrawGraphics();
-		g.drawImage(bimg, 0, 0, Width, Height, null);
+		g.drawImage(Win1.getBimg(), 0, 0, Win1.getHeight(), Win1.getHeight(), null);
 		g.dispose();
 		BS.show();
 	}
@@ -108,6 +92,6 @@ public class Main extends Canvas implements Runnable {
 		if (Running)
 			return;
 		screen.clearPixels();
-		Frame.dispose();
+		Win1.getFrame().dispose();
 	}
 }

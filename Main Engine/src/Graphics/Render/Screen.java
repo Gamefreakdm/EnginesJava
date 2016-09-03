@@ -2,6 +2,7 @@ package Graphics.Render;
 
 import Graphics.Image.Image;
 import Graphics.Image.Sprite;
+import Level.Tile.AnimatedTile;
 import Level.Tile.Tile;
 
 public class Screen {
@@ -77,6 +78,26 @@ public class Screen {
 				if (xa < 0)
 					xa = 0;
 				Pixels[xa + (ya * Width)] = t.getSprite().getPixels()[x + (y * t.getSprite().getWidth())];
+			}
+		}
+	}
+
+	public void RenderAnTile(AnimatedTile ant, float xp, float yp) {
+		xp -= xOffset;
+		yp -= yOffset;
+		for (int y = 0; y < ant.getSprite().getHeight(); y++) {
+			int ya = (int) (y + yp);
+			if (ya >= Height)
+				continue;
+			if (ya < 0)
+				ya = 0;
+			for (int x = 0; x < ant.getSprite().getWidth(); x++) {
+				int xa = (int) (x + xp);
+				if (xa >= Width)
+					continue;
+				if (xa < 0)
+					xa = 0;
+				Pixels[xa + (ya * Width)] = ant.getSprite().getPixels()[x + (y * ant.getSprite().getWidth())];
 			}
 		}
 	}
