@@ -89,6 +89,11 @@
 		<item value="12" key="DIALOG_Y_ORIGIN"/>
 		<item value="78" key="DIALOG_X_ORIGIN"/>
 	</section>
+	<section name="JavaBuildConfigurationBlock">
+		<item value="false" key="expanded2"/>
+		<item value="false" key="expanded1"/>
+		<item value="true" key="expanded0"/>
+	</section>
 	<section name="BreadcrumbItemDropDown">
 	</section>
 	<section name="ClasspathContainerSelectionPage">

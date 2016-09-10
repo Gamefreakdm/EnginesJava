@@ -32,7 +32,6 @@
 <fullyQualifiedTypeName name="Prob01"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
-<fullyQualifiedTypeName name="java.awt.Color"/>
 <fullyQualifiedTypeName name="Input.KeyHandler"/>
 <fullyQualifiedTypeName name="Input.MouseHandler"/>
 <fullyQualifiedTypeName name="Graphics.Image.AnimatedSprite"/>
@@ -42,4 +41,7 @@
 <fullyQualifiedTypeName name="java.awt.Graphics"/>
 <fullyQualifiedTypeName name="Main.Main"/>
 <fullyQualifiedTypeName name="javax.swing.JFrame"/>
+<fullyQualifiedTypeName name="java.awt.Canvas"/>
+<fullyQualifiedTypeName name="java.awt.image.DataBufferInt"/>
+<fullyQualifiedTypeName name="java.awt.Color"/>
 </qualifiedTypeNameHistroy>

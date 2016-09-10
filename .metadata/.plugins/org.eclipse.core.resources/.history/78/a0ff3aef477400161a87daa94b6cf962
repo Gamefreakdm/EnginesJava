@@ -1,0 +1,14 @@
+package Main;
+
+public class Game {
+	private final InputHandler IH;
+
+	public Game() {
+	}
+
+	public void Update() {
+	}
+
+	public void Render() {
+	}
+}

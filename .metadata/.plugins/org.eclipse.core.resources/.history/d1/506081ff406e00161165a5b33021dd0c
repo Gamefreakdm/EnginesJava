@@ -1,9 +1,0 @@
-package Main;
-
-import java.awt.Canvas;
-import java.awt.image.BufferedImage;
-
-public class Window extends Canvas {
-	private BufferedImage Bimg;
-	private static final long serialVersionUID = 1L;
-}

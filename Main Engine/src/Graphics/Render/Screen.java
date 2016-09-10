@@ -37,6 +37,9 @@ public class Screen {
 		}
 	}
 
+	public void RenderIT() {
+	}
+
 	public void RenderImage(Image im, float xp, float yp) {
 		xp -= xOffset;
 		yp -= yOffset;
