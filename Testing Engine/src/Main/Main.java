@@ -93,7 +93,6 @@ public class Main extends Canvas implements Runnable {
 			return;
 		}
 		screen.clearPixels();
-		screen.RenderCol(10, 10, 20, 0x00FF00FF);
 		Graphics g = bs.getDrawGraphics();
 		g.drawImage(bm, 0, 0, Width, Height, null);
 		g.dispose();

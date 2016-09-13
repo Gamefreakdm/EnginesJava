@@ -1,0 +1,36 @@
+package GameObject.Player;
+
+public class Player {
+	private float X, Y;
+	private String Name = "";
+
+	public Player(float x, float y, String n) {
+		setX(x);
+		setY(y);
+		setName(n);
+	}
+
+	public float getX() {
+		return X;
+	}
+
+	public void setX(float x) {
+		X = x;
+	}
+
+	public float getY() {
+		return Y;
+	}
+
+	public void setY(float y) {
+		Y = y;
+	}
+
+	public String getName() {
+		return Name;
+	}
+
+	public void setName(String name) {
+		Name = name;
+	}
+}

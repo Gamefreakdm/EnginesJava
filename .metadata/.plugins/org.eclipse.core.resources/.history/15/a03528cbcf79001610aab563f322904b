@@ -1,0 +1,12 @@
+package GameObject.Player;
+
+import GameObject.Entity.Mob;
+import Graphics.Image.AnimatedSprite;
+import Main.Game;
+
+public class Player extends Mob {
+
+	public Player(int id, float x, float y, AnimatedSprite sps, Game g) {
+		super(id, x, y, sps, g);
+	}
+}

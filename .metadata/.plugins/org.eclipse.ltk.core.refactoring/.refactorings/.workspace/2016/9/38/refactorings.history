@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;Testing Engine/src/GameObject/Player/Player.java&apos;" deleteContents="false" description="Delete resource &apos;Testing Engine/src/GameObject/Player/Player.java&apos;" element1="/Testing Engine/src/GameObject/Player/Player.java" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1473784360990"/>
+</session>

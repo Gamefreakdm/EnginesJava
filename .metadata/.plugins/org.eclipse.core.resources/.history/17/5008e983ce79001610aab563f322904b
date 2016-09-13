@@ -1,0 +1,9 @@
+package GameObject.Player;
+
+public class Player {
+	private String Name = "";
+
+	public Player(float x, float y, String n) {
+		Name = n;
+	}
+}
