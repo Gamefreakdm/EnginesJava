@@ -34,7 +34,6 @@
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="Input.KeyHandler"/>
 <fullyQualifiedTypeName name="Input.MouseHandler"/>
-<fullyQualifiedTypeName name="Graphics.Image.AnimatedSprite"/>
 <fullyQualifiedTypeName name="java.awt.event.KeyEvent"/>
 <fullyQualifiedTypeName name="Graphics.Image.Image"/>
 <fullyQualifiedTypeName name="GameObject.Entity.EntityHanlder"/>
@@ -44,4 +43,6 @@
 <fullyQualifiedTypeName name="java.awt.Canvas"/>
 <fullyQualifiedTypeName name="java.awt.image.DataBufferInt"/>
 <fullyQualifiedTypeName name="java.awt.Color"/>
+<fullyQualifiedTypeName name="GameObject.Player.Player"/>
+<fullyQualifiedTypeName name="Graphics.Image.AnimatedSprite"/>
 </qualifiedTypeNameHistroy>

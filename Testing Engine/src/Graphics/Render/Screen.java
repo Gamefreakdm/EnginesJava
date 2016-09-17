@@ -38,7 +38,9 @@ public class Screen {
 					continue;
 				if (xa < 0)
 					xa = 0;
-				Pixels[xa + (ya * Width)] = sp.getPixels()[x + (y * sp.getWidth())];
+				int Col = sp.getPixels()[x + (y * sp.getWidth())];
+				if (Col != 0XFFFF00FF)
+					Pixels[xa + (ya * Width)] = sp.getPixels()[x + (y * sp.getWidth())];
 			}
 		}
 	}
@@ -61,7 +63,9 @@ public class Screen {
 					continue;
 				if (xa < 0)
 					xa = 0;
-				Pixels[xa + (ya * Width)] = im.getPixels()[x + (y * im.getWidth())];
+				int Col = im.getPixels()[x + (y * im.getWidth())];
+				if (Col != 0XFFFF00FF)
+					Pixels[xa + (ya * Width)] = im.getPixels()[x + (y * im.getWidth())];
 			}
 		}
 	}
@@ -86,7 +90,9 @@ public class Screen {
 					continue;
 				if (xa < 0)
 					xa = 0;
-				Pixels[xa + (ya * Width)] = t.getSprite().getPixels()[x + (y * t.getSprite().getWidth())];
+				int Col = t.getSprite().getPixels()[x + (y * t.getSprite().getWidth())];
+				if (Col != 0XFFFF00FF)
+					Pixels[xa + (ya * Width)] = t.getSprite().getPixels()[x + (y * t.getSprite().getWidth())];
 			}
 		}
 	}
@@ -106,7 +112,9 @@ public class Screen {
 					continue;
 				if (xa < 0)
 					xa = 0;
-				Pixels[xa + (ya * Width)] = ant.getSprite().getPixels()[x + (y * ant.getSprite().getWidth())];
+				int Col = ant.getSprite().getPixels()[x + (y * ant.getSprite().getWidth())];
+				if (Col != 0XFFFF00FF)
+					Pixels[xa + (ya * Width)] = ant.getSprite().getPixels()[x + (y * ant.getSprite().getWidth())];
 			}
 		}
 	}

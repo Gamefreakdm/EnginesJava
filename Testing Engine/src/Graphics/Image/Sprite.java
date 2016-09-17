@@ -13,7 +13,7 @@ public class Sprite {
 
 	public Sprite(int x, int y, int s, SpriteSheet sheet) {
 		Pixels = new int[s * s];
-		Load(sheet, (x * s), (y * s), s);
+		Load(sheet, x, y, s);
 		Width = s;
 		Height = s;
 	}

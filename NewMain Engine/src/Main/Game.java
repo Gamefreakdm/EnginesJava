@@ -1,7 +1,10 @@
 package Main;
 
 import java.awt.event.KeyEvent;
+
 import javax.swing.JFrame;
+
+import Graphics.Render.Screen;
 import Input.InputHandler;
 
 public class Game {
@@ -20,6 +23,9 @@ public class Game {
 			System.exit(0);
 		if (gs == "Playing") {
 		}
+	}
+
+	public void Render(Screen screen) {
 	}
 
 	public double getTime() {
