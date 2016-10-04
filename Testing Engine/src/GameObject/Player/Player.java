@@ -9,6 +9,13 @@ public class Player extends Mob {
 
 	public Player(int id, float x, float y, AnimatedSprite sps, Game g) {
 		super(id, x, y, sps, g);
+		fM(sps);
+	}
+
+	private void fM(AnimatedSprite sps) {
+		if (sps == AnimatedSprite.Glob) {
+			setHealth(5.0);
+		}
 	}
 
 	@Override

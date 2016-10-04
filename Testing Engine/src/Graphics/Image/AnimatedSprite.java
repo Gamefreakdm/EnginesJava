@@ -6,7 +6,7 @@ import Graphics.Image.SpriteSheet;
 public class AnimatedSprite {
 	private final Sprite sprites[];
 	private final int WIDTH, HEIGHT;
-	public static final AnimatedSprite Player1 = new AnimatedSprite(SpriteSheet.Player1, 64, 6, 6);
+	public static AnimatedSprite Glob = new AnimatedSprite(SpriteSheet.Glob, 64, 1, 6);
 
 	public AnimatedSprite(SpriteSheet sheet, int w, int h, int maxy, int maxx) {
 		sprites = new Sprite[maxy * maxx];

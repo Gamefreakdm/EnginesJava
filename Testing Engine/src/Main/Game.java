@@ -1,16 +1,20 @@
 package Main;
 
 import java.awt.event.KeyEvent;
+
 import javax.swing.JFrame;
+
 import GameObject.Player.Player;
 import Graphics.Image.AnimatedSprite;
 import Graphics.Render.Screen;
 import Input.InputHandler;
+import Level.Level;
 
 public class Game {
 	private double Time = 0;
 	private String gs = "Main";
-	private Player player = new Player(0, 20, 40, AnimatedSprite.Player1, this);
+	private Level Level1 = new Level(64);
+	private Player player = new Player(0, 20, 40, AnimatedSprite.Glob, this);
 
 	public void Update() {
 		if (Time >= 20.0)
@@ -19,6 +23,7 @@ public class Game {
 	}
 
 	public void Render(Screen screen) {
+		Level1.Render(screen, 0, 0);
 		player.Render(screen);
 	}
 

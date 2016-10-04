@@ -7,7 +7,9 @@ import javax.imageio.ImageIO;
 public class SpriteSheet {
 	private int[] Pixels;
 	private int Width, Height;
-	public static SpriteSheet Player1 = new SpriteSheet("/Textures/Player1.png");
+	public static SpriteSheet Glob = new SpriteSheet("/Textures/Glob.png");
+	public static SpriteSheet Tiles = new SpriteSheet("/Textures/Tiles.png");
+	public static SpriteSheet OnTiles = new SpriteSheet("/Textures/OnTiles.png");
 
 	public SpriteSheet(String path) {
 		Load(path);

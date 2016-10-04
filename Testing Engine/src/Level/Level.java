@@ -18,17 +18,23 @@ public class Level {
 		Tiles = new int[s * s];
 	}
 
+	public void GenGrass() {
+	}
+
 	public void Render(Screen screen, float xp, float yp) {
 		Screen.setOffset(xp, yp);
 		for (int y = 0; y < MapH; y++) {
 			for (int x = 0; x < MapW; x++) {
-				getTile(x, y).Render(screen, x, y);
+				screen.RenderTile(getTile(x, y), x * MapW, y * MapH);
 			}
 		}
 	}
 
-	public Tile getTile(int x, int y) {
-		return null;
+	private Tile getTile(int x, int y) {
+		if (Tiles[x + y * MapW] == 0) {
+			return Tile.Grass;
+		}
+		return Tile.Grass;
 	}
 
 	public int getMapW() {

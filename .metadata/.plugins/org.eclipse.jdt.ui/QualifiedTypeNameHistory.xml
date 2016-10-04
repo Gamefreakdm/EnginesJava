@@ -18,7 +18,6 @@
 <fullyQualifiedTypeName name="Graphics.Sprite"/>
 <fullyQualifiedTypeName name="Level.Tile.WaterTile"/>
 <fullyQualifiedTypeName name="Level.LevelMain"/>
-<fullyQualifiedTypeName name="Level.Level"/>
 <fullyQualifiedTypeName name="Entity.Entity"/>
 <fullyQualifiedTypeName name="org.lwjgl.opengl.Display"/>
 <fullyQualifiedTypeName name="java.awt.image.BufferedImage"/>
@@ -45,4 +44,5 @@
 <fullyQualifiedTypeName name="java.awt.Color"/>
 <fullyQualifiedTypeName name="GameObject.Player.Player"/>
 <fullyQualifiedTypeName name="Graphics.Image.AnimatedSprite"/>
+<fullyQualifiedTypeName name="Level.Level"/>
 </qualifiedTypeNameHistroy>

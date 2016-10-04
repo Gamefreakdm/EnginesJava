@@ -1,7 +1,0 @@
-package GameObject.Player;
-
-public class Player {
-
-	public Player() {
-	}
-}

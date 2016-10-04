@@ -1,0 +1,51 @@
+package Level;
+
+import Graphics.Render.Screen;
+import Level.Tile.Tile;
+
+public class Level {
+	private final int[] Tiles;
+	private final int MapW, MapH;
+
+	public Level(int w, int h) {
+		MapW = w;
+		MapH = h;
+		Tiles = new int[w * h];
+	}
+
+	public Level(int s) {
+		MapW = MapH = s;
+		Tiles = new int[s * s];
+	}
+
+	public void GenGrass() {
+	}
+
+	public void Render(Screen screen, float xp, float yp) {
+		Screen.setOffset(xp, yp);
+		for (int y = 0; y < MapH; y++) {
+			for (int x = 0; x < MapW; x++) {
+				screen.RenderTile(getTile(x, y), x * MapH, y * MapW);
+			}
+		}
+	}
+
+	private Tile getTile(int x, int y) {
+		if (Tiles[x + y * MapW] == 0) {
+			return Tile.Grass;
+		}
+		return Tile.Grass;
+	}
+
+	public int getMapW() {
+		return MapW;
+	}
+
+	public int getMapH() {
+		return MapH;
+	}
+
+	public int[] getTiles() {
+		return Tiles;
+	}
+}

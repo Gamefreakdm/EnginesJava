@@ -10,6 +10,7 @@ public abstract class Mob extends Entity {
 	private Sprite sprite;
 	private final Game game;
 	private double pastTime;
+	private double Health = 0;
 	private final AnimatedSprite sprites;
 	private boolean Up, Dow, Lef, Rig, mov;
 
@@ -96,5 +97,13 @@ public abstract class Mob extends Entity {
 
 	public Game getGame() {
 		return game;
+	}
+
+	public double getHealth() {
+		return Health;
+	}
+
+	public void setHealth(double health) {
+		Health = health;
 	}
 }

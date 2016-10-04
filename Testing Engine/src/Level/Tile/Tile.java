@@ -7,6 +7,7 @@ import Graphics.Render.Screen;
 public class Tile {
 	private final Sprite sprite;
 	private final boolean IsSolid;
+	public static Tile Grass = new Tile(Sprite.Grass, false);
 
 	public Tile(Sprite sp, boolean issolid) {
 		sprite = sp;
